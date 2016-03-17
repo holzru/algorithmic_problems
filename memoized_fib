@@ -1,0 +1,11 @@
+def fib_dyn(n):
+    known = {}
+    if n not in known.keys():
+        known[n] = fib(n, known)
+    return known[n]
+        
+def fib(n, known):
+    if n == 1 or n == 2:
+        return 1
+    else: 
+        return fib(n-1, known) + fib(n-2, known)
